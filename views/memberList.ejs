@@ -7,6 +7,27 @@
 <body>
 <div align="center">
     <h2>요바나시 직원 여러분들의 방문을 환영합니다</h2>
+    <h3>요바나시 직원 정보</h3>
+    <hr>
+    <table border="1">
+        <th>이름</th> <th>직책</th> <th>시급</th> <th>입사일</th>
+        <%for (const member of members) {%>
+            <tr>
+                <td><%=member.name%></td>
+                <td><%=member.position%></td>
+                <td><%=member.money%></td>
+                <td><%=member.regdate%></td>
+            </tr>
+        <% } %>
+    </table>
+    <hr>
+    <h2>이번주 룸 담당자</h2>
+
+    <a href = "/regist">[직원 등록]</a>
+    <a href = "/user">[회원 가입]</a>
 </div>
+
+
+
 </body>
 </html>

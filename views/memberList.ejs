@@ -13,7 +13,7 @@
         <th>이름</th> <th>직책</th> <th>시급</th> <th>입사일</th>
         <%for (const member of members) {%>
             <tr>
-                <td><%=member.name%></td>
+                <td><a href = "/detail/<%=member.id%>"><%=member.name%></a></td>
                 <td><%=member.position%></td>
                 <td><%=member.money%></td>
                 <td><%=member.regdate%></td>

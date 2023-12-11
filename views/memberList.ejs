@@ -11,23 +11,25 @@
     <hr>
     <table border="1">
         <th>이름</th> <th>직책</th> <th>시급</th> <th>입사일</th>
-        <%for (const member of members) {%>
+        <% for (const member of members) { %>
             <tr>
-                <td><a href = "/detail/<%=member.id%>"><%=member.name%></a></td>
-                <td><%=member.position%></td>
-                <td><%=member.money%></td>
-                <td><%=member.regdate%></td>
+                <td><a href="/detail/<%= member.id %>"><%= member.name %></a></td>
+                <td><%= member.position %></td>
+                <td><%= member.money %></td>
+                <td><%= member.regdate %></td>
             </tr>
         <% } %>
     </table>
     <hr>
     <h2>이번주 룸 담당자</h2>
 
-    <a href = "/regist">[직원 등록]</a>
-    <a href = "/user">[회원 가입]</a>
+    <% if (!login) { %>
+        <a href="/regist">[직원 등록]</a>
+        <a href="/user">[로그인]</a>
+    <% } else if (login) { %>
+        <%= login %>님 환영합니다!!
+        <a href = "/user/logout">[로그아웃]</a>
+    <% } %>
 </div>
-
-
-
 </body>
 </html>

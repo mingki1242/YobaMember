@@ -1,12 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const dao = require('../services/dao');
-
-router.get("/" , async (req,res) => {
+Yrouter.get("/" , async (req,res) => {
      let obj= {};
      let result = await dao.getAllList();
      obj.members = result;
-
+     obj.login=null;
      res.render("memberList" , obj);
 })
 

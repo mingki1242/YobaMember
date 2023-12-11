@@ -45,6 +45,14 @@ async function readCntPlus(id)
     const result = await db.query(sql , [id]);
     return result
 }
+
+async function findbyemail(email) 
+{
+    const sql = "select * from mkpark where email = ?";
+    const result = await db.query(sql , [email]);
+    return result[0];
+}
+
 module.exports = {
     getAllList,
     registMember,
@@ -52,4 +60,6 @@ module.exports = {
     deleteById,
     updateMember,
     readCntPlus,
+    findbyemail,
+    
 }
